@@ -8,8 +8,6 @@ class PageEdit extends Component {
         categories: '',
         category: '',
     };
-
-
     async componentDidMount() {
         const response = await axiosPages.get('/pages.json');
         if (response.data) {
@@ -41,11 +39,7 @@ class PageEdit extends Component {
         };
         await axiosPages.put('/pages/' + this.state.category + '.json',data);
         this.props.history.push(`/pages/${this.state.category}`)
-
-
     };
-
-
     render() {
         return (
             <form action="" className='container' onSubmit={this.submitHandler}>
